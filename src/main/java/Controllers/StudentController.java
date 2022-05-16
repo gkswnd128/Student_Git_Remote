@@ -24,8 +24,14 @@ public class StudentController extends HttpServlet {
 		try {
 
 			if(uri.equals("/create.student")) { // 한중
-				
-				
+				if(uri.equals("/add.std")) {
+					String name = request.getParameter("name");
+					int kor = Integer.parseInt(request.getParameter("kor"));
+					int eng = Integer.parseInt(request.getParameter("eng"));
+					int math = Integer.parseInt(request.getParameter("math"));
+
+					int result = dao.insert(new StudentDTO(0,0,name,kor,eng,math,null));
+					response.sendRedirect("index.jsp");
 				
 			} else if (uri.equals("/read.student")) { // 서호
 				
