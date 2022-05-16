@@ -7,34 +7,52 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class StudentController
- */
-@WebServlet("/StudentController")
-public class StudentController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public StudentController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+@WebServlet("*.student")
+public class StudentController extends HttpServlet {
+      
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String uri = request.getRequestURI();
+		
+		System.out.println(uri);
+		
+		try {
+
+			if(uri.equals("/create.student")) { // 한중
+				
+				
+				
+			} else if (uri.equals("/read.student")) { // 서호
+				
+				
+				
+				
+			} else if (uri.equals("/delete.student")) { // 아람
+				
+				
+				
+				
+			} else if (uri.equals("/update.student")) { // 세훈
+				
+				
+				
+				
+			}
+						
+		}catch (Exception e) {
+			e.printStackTrace();
+			response.sendRedirect("error.html");
+		}
+		
+		
+		
+		
+		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
