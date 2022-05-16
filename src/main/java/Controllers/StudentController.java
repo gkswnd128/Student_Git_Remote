@@ -9,12 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< HEAD
 import DAO.StudentDAO;
 import DTO.StudentDTO;
-=======
-import dto.StudentDTO;
->>>>>>> ef2f947f27cadbc95524fe90a7fb182fad15aa05
 
 
 @WebServlet("*.student")
