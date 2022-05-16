@@ -28,7 +28,7 @@
            <th>avg
         </tr>
     
-           <c:forEach var ="i" item="${list }"> 
+           <c:forEach var ="i" items="${list}"> 
            <tr>
                 <td>${i.rank}
 				<td>${i.sid }
