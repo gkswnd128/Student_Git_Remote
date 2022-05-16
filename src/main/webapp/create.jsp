@@ -28,7 +28,7 @@
 			<td><input type=text name="math" placeholder="Math Score" required></td>
 		</tr>
 		<tr>
-			<td><button id="add">Add</button><button id="Back">Back</button></td>
+			<td><button id="add">Add</button><button id="back">Back</button></td>
 		</tr>
 	</table>
 	
