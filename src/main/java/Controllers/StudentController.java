@@ -28,6 +28,13 @@ public class StudentController extends HttpServlet {
 				
 				
 				
+				
+				
+				
+				
+				
+				
+				
 			} else if (uri.equals("/read.student")) { // 서호
 			
 				List<StudentDTO> list = dao.selectAll();
@@ -36,8 +43,8 @@ public class StudentController extends HttpServlet {
 				request.getRequestDispatcher("read.jsp").forward(request, response);
 				
 				
-				
 			} else if (uri.equals("/delete.student")){
+				
 				int sid = Integer.parseInt(request.getParameter("sid"));
 				dao.delete(sid);
 				response.sendRedirect("/deleteList.student");
@@ -49,6 +56,8 @@ public class StudentController extends HttpServlet {
 						
 				
 			} else if (uri.equals("/update.student")) { // 세훈
+				
+				
 				
 				
 				

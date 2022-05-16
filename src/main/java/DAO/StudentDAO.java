@@ -56,9 +56,16 @@ public class StudentDAO {
 
 		}
 	
-	
-	
-	
+	public int delete(int sid) throws Exception{
+		String sql = "delete from student where sid=?";
+		try(Connection con = this.getConnection();
+			PreparedStatement pstat = con.prepareStatement(sql)){
+			pstat.setInt(1, sid);
+			int result = pstat.executeUpdate();
+			con.commit();
+			return result;
+		}
+	}
 	
 	
 	}
