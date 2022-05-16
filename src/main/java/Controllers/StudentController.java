@@ -25,7 +25,6 @@ public class StudentController extends HttpServlet {
 		try {
 
 			if (uri.equals("/create.student")) { // 한중
-				if (uri.equals("/add.std")) {
 					String name = request.getParameter("name");
 					int kor = Integer.parseInt(request.getParameter("kor"));
 					int eng = Integer.parseInt(request.getParameter("eng"));
