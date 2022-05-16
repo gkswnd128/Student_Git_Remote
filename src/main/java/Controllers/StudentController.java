@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dto.StudentDTO;
+
 
 @WebServlet("*.student")
 public class StudentController extends HttpServlet {
@@ -35,9 +37,14 @@ public class StudentController extends HttpServlet {
 				
 			} else if (uri.equals("/update.student")) { // 세훈
 				
+				int sid = Integer.parseInt(request.getParameter("sid"));
+				String name = request.getParameter("name");
+			    int kor = Integer.parseInt(request.getParameter("kor"));
+			    int eng = Integer.parseInt(request.getParameter("eng"));
+				int math = Integer.parseInt(request.getParameter("math"));
 				
-				
-				
+			    int result = dao.update(new StudentDTO(0,sid,name,kor,eng,math,null));
+				response.sendRedirect("updatelist.Student");	
 			}
 						
 		}catch (Exception e) {
