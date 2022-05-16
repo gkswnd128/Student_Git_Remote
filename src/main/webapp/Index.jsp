@@ -67,7 +67,7 @@
 			location.href="read.student";
 		})
 		$("#delete").on("click",function(){
-			location.href="deletelist.student";
+			location.href="deleteList.student";
 		})
 		$("#update").on("click",function(){
 			location.href="update.student";
