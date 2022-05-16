@@ -58,7 +58,7 @@
 		})
 		$("#del").on("click",function(){
 			let delsid = $("#delsid").val();
-			location.href = "delete.student?sid="+delsid;
+			location.href = "/delete.student?sid="+delsid;
 		})
 	</script>
 </body>
