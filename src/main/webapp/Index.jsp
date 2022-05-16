@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 
 <!DOCTYPE html>
 <html>
@@ -66,7 +67,7 @@
 			location.href="read.student";
 		})
 		$("#delete").on("click",function(){
-			location.href="delete.student";
+			location.href="deleteList.student";
 		})
 		$("#update").on("click",function(){
 			location.href="update.student";
