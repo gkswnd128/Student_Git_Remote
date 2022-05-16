@@ -9,7 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD
+import DAO.StudentDAO;
+import DTO.StudentDTO;
+=======
 import dto.StudentDTO;
+>>>>>>> ef2f947f27cadbc95524fe90a7fb182fad15aa05
 
 
 @WebServlet("*.student")
@@ -18,7 +23,7 @@ public class StudentController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String uri = request.getRequestURI();
-		
+		StudentDAO dao = new StudentDAO();
 		System.out.println(uri);
 		
 		try {
@@ -28,7 +33,11 @@ public class StudentController extends HttpServlet {
 				
 				
 			} else if (uri.equals("/read.student")) { // 서호
+			
+				List<StudentDTO> list = dao.selectAll();
+				request.setAttribute("list", list);
 				
+				request.getRequestDispatcher("read.jsp").forward(request, response);
 				
 				
 				
