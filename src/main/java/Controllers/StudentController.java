@@ -63,7 +63,7 @@ public class StudentController extends HttpServlet {
 			    int eng = Integer.parseInt(request.getParameter("eng"));
 				int math = Integer.parseInt(request.getParameter("math"));
 				
-			    int result = dao.update(new StudentDTO(0,sid,name,kor,eng,math,null));
+			   // int result = dao.update(new StudentDTO(0,sid,name,kor,eng,math,null));
 				response.sendRedirect("updatelist.Student");	
 
 			}
