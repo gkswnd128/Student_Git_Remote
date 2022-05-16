@@ -32,6 +32,20 @@ public class StudentDAO {
 		DataSource ds = (DataSource)ctx.lookup("java:comp/env/jdbc/orcl");
 		return ds.getConnection();
 	}
+	
+	public int insert(StudentDTO dto) throws Exception{
+		String sql = "insert into student values(student_seq.nextval, ?,?,?,?,sysdate)";
+		try(Connection con = this.getConnection();
+			PreparedStatement pstat = con.prepareStatement(sql)){
+			pstat.setString(1,dto.getName());
+			pstat.setInt(2, dto.getKor());
+			pstat.setInt(3, dto.getEng());
+			pstat.setInt(4, dto.getMath());
+			int result = pstat.executeUpdate();
+			con.commit();
+			return result;
+		}
+	}
 
 	public List<StudentDTO> selectAll() throws Exception{
 		String sql = "select rank() over(order by kor +eng + math desc) rank, sid, name, kor, eng, math from student";
