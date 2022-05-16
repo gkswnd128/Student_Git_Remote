@@ -9,8 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD
 import DAO.StudentDAO;
 import DTO.StudentDTO;
+=======
+import dto.StudentDTO;
+>>>>>>> ef2f947f27cadbc95524fe90a7fb182fad15aa05
 
 
 @WebServlet("*.student")
@@ -37,10 +41,16 @@ public class StudentController extends HttpServlet {
 				
 				
 				
-			} else if (uri.equals("/delete.student")) { // 아람
-				
-				
-				
+			} else if (uri.equals("/delete.student")){
+				int sid = Integer.parseInt(request.getParameter("sid"));
+				dao.delete(sid);
+				response.sendRedirect("/deleteList.student");
+					
+			} else if (uri.equals("/deleteList.student")){
+				List<StudentDTO> list = dao.selectAll();
+				request.setAttribute("list", list);
+				request.getRequestDispatcher("delete.jsp").forward(request, response);
+						
 				
 			} else if (uri.equals("/update.student")) { // 세훈
 				
