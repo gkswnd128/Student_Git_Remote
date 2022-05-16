@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/add.student">
+	<form action="/create.student">
 	<table border=1 align="center">
 		<tr>
 		<th> New Student</th>
