@@ -70,7 +70,7 @@
 			location.href="deleteList.student";
 		})
 		$("#update").on("click",function(){
-			location.href="update.student";
+			location.href="updatelist.student";
 		})
 	</script>
 
