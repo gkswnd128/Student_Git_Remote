@@ -25,6 +25,7 @@ public class StudentController extends HttpServlet {
 		try {
 
 			if (uri.equals("/create.student")) { // 한중
+				if (uri.equals("/create.student")) { // 한중
 					String name = request.getParameter("name");
 					int kor = Integer.parseInt(request.getParameter("kor"));
 					int eng = Integer.parseInt(request.getParameter("eng"));
@@ -41,6 +42,7 @@ public class StudentController extends HttpServlet {
 					request.getRequestDispatcher("read.jsp").forward(request, response);
 
 				} else if (uri.equals("/delete.student")) {
+
 					int sid = Integer.parseInt(request.getParameter("sid"));
 					dao.delete(sid);
 					response.sendRedirect("/deleteList.student");
@@ -50,16 +52,29 @@ public class StudentController extends HttpServlet {
 					request.setAttribute("list", list);
 					request.getRequestDispatcher("delete.jsp").forward(request, response);
 
+				} else if (uri.equals("/updatelist.student")) { // 세훈
+
+					List<StudentDTO> list = dao.selectAll();
+					request.setAttribute("list", list);
+
+					request.getRequestDispatcher("update.jsp").forward(request, response);
+
 				} else if (uri.equals("/update.student")) { // 세훈
 
-				}
+					int sid = Integer.parseInt(request.getParameter("sid"));
+					String name = request.getParameter("name");
+					int kor = Integer.parseInt(request.getParameter("kor"));
+					int eng = Integer.parseInt(request.getParameter("eng"));
+					int math = Integer.parseInt(request.getParameter("math"));
 
+					int result = dao.update(new StudentDTO(0, sid, name, kor, eng, math, null));
+					response.sendRedirect("updatelist.Student");
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			response.sendRedirect("error.html");
 		}
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
