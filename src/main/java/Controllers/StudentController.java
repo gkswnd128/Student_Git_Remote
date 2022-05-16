@@ -55,6 +55,14 @@ public class StudentController extends HttpServlet {
 				request.getRequestDispatcher("delete.jsp").forward(request, response);
 						
 				
+			} else if (uri.equals("/updatelist.student")) { // 세훈
+				
+				List<StudentDTO> list = dao.selectAll();
+				request.setAttribute("list", list);
+
+				request.getRequestDispatcher("update.jsp").forward(request, response);
+
+
 			} else if (uri.equals("/update.student")) { // 세훈
 				
 				int sid = Integer.parseInt(request.getParameter("sid"));
