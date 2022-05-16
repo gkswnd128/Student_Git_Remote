@@ -61,7 +61,7 @@
 
 	<script>
 		$("#create").on("click",function(){
-			location.href="create.student";
+			location.href="create.jsp";
 		})
 		$("#read").on("click",function(){
 			location.href="read.student";

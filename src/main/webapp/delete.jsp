@@ -54,7 +54,7 @@
 	</table>
 	<script>
 		$("#back").on("click", function() {
-			location.href = "index.jsp";
+			location.href = "Index.jsp";
 		})
 		$("#del").on("click",function(){
 			let delsid = $("#delsid").val();
